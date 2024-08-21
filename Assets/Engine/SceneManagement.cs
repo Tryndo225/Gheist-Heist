@@ -5,17 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /* 
+     * Basic scenemanagement script run in backround of every level
+     * Used to jump between scenes using unity canvas buttons
+    */
 
+
+    //Sound effect : played on every buttonpress 
     [SerializeField] private AudioClip soundEffect;
 
-    public void changeScene(string scene)
+    //Main method thus enabling simple addjustions to code
+    private void changeScene(string scene)
     {
         SoundFXManager.soundFXManagerInstance.playSoundFXClip(soundEffect, this.transform);
         SceneManager.LoadScene(scene);
         Time.timeScale = 1;
     }
 
+    //Callable methods used by different buttons throughout the game
     public void goToMain()
     {
         Time.timeScale = 1;
@@ -44,10 +51,12 @@ public class SceneManagement : MonoBehaviour
         changeScene("Sector D");
     }
 
-    public void goToTable() 
+    public void goToTable()
     {
         changeScene("Table");
     }
+
+    //Ran when quiting the application (Windows based exports only)
     public void quitAplication()
     {
         SoundFXManager.soundFXManagerInstance.playSoundFXClip(soundEffect, this.transform);
@@ -57,11 +66,5 @@ public class SceneManagement : MonoBehaviour
     public void restart()
     {
         changeScene(SceneManager.GetActiveScene().name);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -4,57 +4,57 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //Sound Clips
+    // Sound Clips
     [SerializeField] private AudioClip[] jumpSounds;
     [SerializeField] private AudioClip[] landSounds;
     [SerializeField] private AudioClip ghostDeath;
     [SerializeField] private AudioClip laserDeath;
 
-    //Exal Drag
+    // Exal Drag
     [SerializeField] private float exalDrag;
 
-    //Ground Drag
+    // Ground Drag
     [SerializeField] private float groundDrag;
 
-    //Box Projection Ground Parameters 
+    // Box Projection Ground Parameters 
     [SerializeField] private float distanceGround;
     [SerializeField] private Vector3 boxSizeGround;
 
-    //Box Projection Wall Parameters 
+    // Box Projection Wall Parameters 
     [SerializeField] private float distanceWall;
     [SerializeField] private Vector3 boxSizeWall;
 
-    //Box Drawing
+    // Box Drawing
     [SerializeField] private bool boxDraw;
 
-    //Jump Parameters
+    // Jump Parameters
     [SerializeField] private float jumpHeight;
     [SerializeField] private float bunnyHopWindow;
     [SerializeField] private float wallJumpHeight;
     [SerializeField] private float wallJumpBounce;
 
-    //Movement Parameters
+    // Movement Parameters
     [SerializeField] private float maxGroundSpeed;
     [SerializeField] private float groundSpeed;
     [SerializeField] private float airSpeed;
     [SerializeField] private float maxAirSpeed;
 
-    //Physics Bodies
+    // Physics Bodies
     [SerializeField] private Rigidbody2D myBody;
     [SerializeField] private Transform myTransform;
 
-    //Layer for Ground
+    // Layer for Ground
     [SerializeField] private LayerMask layerGround;
     [SerializeField] private LayerMask layerWall;
 
-    //Movement Stopping Checks
+    // Movement Stopping Checks
     private bool checkRight;
     private bool checkLeft;
 
-    //Jump Int
+    // Jump Int
     private int wallJumpInt;
 
-    //Colision Detection
+    // Colision Detection
     GameSession targetScript;
 
     private bool facingRight;
@@ -63,43 +63,46 @@ public class PlayerMovement : MonoBehaviour
     // Function checks whether the object is grounded
     private bool isGrounded(float offset = 0)
     {
-        if (Physics2D.BoxCast(myTransform.position, boxSizeGround, 0, -Vector2.up,  distanceGround + offset, layerGround))
+        if (Physics2D.BoxCast(myTransform.position, boxSizeGround, 0, -Vector2.up, distanceGround + offset, layerGround))
         {
             if (offset == 0 && inAirCheck)
             {
                 landSound();
             }
             inAirCheck = false;
-            return true; 
+            return true;
         }
         inAirCheck = true;
         return false;
 
     }
 
-    //Function check for wall touches for wall-jumping
+    // Function check for wall touches for wall-jumping
     private int wallJump()
     {
         if (Physics2D.BoxCast(myTransform.position, boxSizeWall, 0, -Vector2.right, distanceWall, layerWall))
-            { return 1; }
+        { return 1; }
 
         else if (Physics2D.BoxCast(myTransform.position, boxSizeWall, 0, Vector2.right, distanceWall, layerWall))
-            { return -1; }
+        { return -1; }
 
         return 0;
     }
 
-    //Collider Boxes
+    // Collider Boxes - draws collider boxes for better visualization when testing using gizmos
     private void OnDrawGizmos()
     {
         if (boxDraw)
         {
+            // ground box 
             Gizmos.color = Color.yellow;
             Gizmos.DrawCube(myTransform.position - Vector3.up * distanceGround, boxSizeGround);
 
+            // bunnyhop box
             Gizmos.color = Color.blue;
             Gizmos.DrawCube(myTransform.position - new Vector3(0, distanceGround + bunnyHopWindow, 0), boxSizeGround);
 
+            // side boxes
             Gizmos.color = Color.red;
             Gizmos.DrawCube(myTransform.position + Vector3.right * distanceWall, boxSizeWall);
             Gizmos.DrawCube(myTransform.position - Vector3.right * distanceWall, boxSizeWall);
@@ -113,64 +116,117 @@ public class PlayerMovement : MonoBehaviour
         targetScript = GameObject.Find("Game Session").GetComponent<GameSession>();
     }
 
-    // Play Jump Sounds
+    // Plays jump sounds
     void jumpSound()
     {
         SoundFXManager.soundFXManagerInstance.playRandomSoundFXClip(jumpSounds, myTransform);
     }
 
+    // Plays landing sounds
     void landSound()
     {
         SoundFXManager.soundFXManagerInstance.playRandomSoundFXClip(landSounds, myTransform);
     }
 
+    // Handles response when jumping
+    void jump()
+    {
+        wallJumpInt = wallJump();
+        if (isGrounded(bunnyHopWindow))
+        {
+            myBody.velocity = new Vector2(myBody.velocity.x, jumpHeight);
+            jumpSound();
+        }
+
+        else if (wallJumpInt != 0)
+        {
+            myBody.velocity = new Vector2(wallJumpInt * wallJumpBounce, wallJumpHeight);
+            jumpSound();
+        }
+    }
+
+    // Gives player downwards Y-axis movement
+    void fastFall()
+    {
+        myBody.velocity += Vector2.down * airSpeed;
+    }
+
+    // Handles Left input
+    void left()
+    {
+        if (isGrounded())
+        {
+            if (Mathf.Abs(myBody.velocity.x - (Vector2.right * groundSpeed).magnitude) <= maxGroundSpeed || Mathf.Abs(myBody.velocity.x) > Mathf.Abs(myBody.velocity.x - (Vector2.right * groundSpeed).magnitude))
+            {
+                myBody.velocity -= new Vector2(groundSpeed, 0);
+            }
+
+            else if (Mathf.Abs(myBody.velocity.x - (Vector2.right * groundSpeed).magnitude) > maxGroundSpeed && myBody.velocity.magnitude <= maxGroundSpeed)
+            {
+                myBody.velocity = new Vector2(-maxGroundSpeed, myBody.velocity.y);
+            }
+
+        }
+
+        else if (Mathf.Abs(myBody.velocity.x - (Vector2.right * airSpeed).magnitude) <= maxAirSpeed || Mathf.Abs(myBody.velocity.x) > Mathf.Abs(myBody.velocity.x - (Vector2.right * airSpeed).magnitude))
+        {
+            myBody.velocity -= Vector2.right * airSpeed;
+        }
+    }
+
+    // Handles Right input
+    void right()
+    {
+        if (isGrounded())
+        {
+            if (Mathf.Abs(myBody.velocity.x + (Vector2.right * groundSpeed).magnitude) <= maxGroundSpeed || Mathf.Abs(myBody.velocity.x) > Mathf.Abs(myBody.velocity.x + (Vector2.right * groundSpeed).magnitude))
+            {
+                myBody.velocity += new Vector2(groundSpeed, 0);
+            }
+
+            else if (Mathf.Abs(myBody.velocity.x + (Vector2.right * groundSpeed).magnitude) > maxGroundSpeed && myBody.velocity.magnitude <= maxGroundSpeed)
+            {
+                myBody.velocity = new Vector2(maxGroundSpeed, myBody.velocity.y);
+            }
+        }
+
+        else if (Mathf.Abs(myBody.velocity.x + (Vector2.right * airSpeed).magnitude) <= maxAirSpeed || Mathf.Abs(myBody.velocity.x) > Mathf.Abs(myBody.velocity.x + (Vector2.right * airSpeed).magnitude))
+        {
+            myBody.velocity += Vector2.right * airSpeed;
+        }
+    }
+
+    // Flips the player model
+    private void flip()
+    {
+        myTransform.localScale = new Vector2(-1 * myTransform.localScale.x, myTransform.localScale.y);
+        facingRight = !facingRight;
+    }
+
     // Update is called once per frame
+    /* 
+     * Update method is used for checking for player inputs and subsiquent implementions of those movements
+    */
     void Update()
     {
+        // necessary checks
         checkRight = false;
         checkLeft = false;
 
+        // Handles Jumping input
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            wallJumpInt = wallJump();
-            if (isGrounded(bunnyHopWindow))
-            {
-                myBody.velocity = new Vector2(myBody.velocity.x, jumpHeight);
-                jumpSound();
-            }
-
-            else if (wallJumpInt!=0)
-            {
-                myBody.velocity = new Vector2(wallJumpInt*wallJumpBounce, wallJumpHeight);
-                jumpSound();
-            }
+            jump();
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            myBody.velocity += Vector2.down * airSpeed;
+            fastFall();
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            if (isGrounded())
-            {
-                if (Mathf.Abs(myBody.velocity.x - (Vector2.right * groundSpeed).magnitude) <= maxGroundSpeed || Mathf.Abs(myBody.velocity.x) > Mathf.Abs(myBody.velocity.x - (Vector2.right * groundSpeed).magnitude))
-                {
-                    myBody.velocity -= new Vector2(groundSpeed, 0);
-                }
-
-                else if (Mathf.Abs(myBody.velocity.x - (Vector2.right * groundSpeed).magnitude) > maxGroundSpeed && myBody.velocity.magnitude <= maxGroundSpeed)
-                {
-                    myBody.velocity = new Vector2(-maxGroundSpeed, myBody.velocity.y);
-                }
-
-            }
-
-            else if (Mathf.Abs(myBody.velocity.x - (Vector2.right * airSpeed).magnitude) <= maxAirSpeed || Mathf.Abs(myBody.velocity.x) > Mathf.Abs(myBody.velocity.x - (Vector2.right * airSpeed).magnitude))
-            {
-                myBody.velocity -= Vector2.right * airSpeed;
-            }
+            left();
         }
         else
         {
@@ -178,31 +234,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
-        { 
-            if (isGrounded())
-            {
-                if (Mathf.Abs(myBody.velocity.x + (Vector2.right * groundSpeed).magnitude) <= maxGroundSpeed || Mathf.Abs(myBody.velocity.x) > Mathf.Abs(myBody.velocity.x + (Vector2.right * groundSpeed).magnitude))
-                {
-                    myBody.velocity += new Vector2(groundSpeed, 0);
-                }
-
-                else if (Mathf.Abs(myBody.velocity.x + (Vector2.right * groundSpeed).magnitude) > maxGroundSpeed && myBody.velocity.magnitude <= maxGroundSpeed)
-                {
-                    myBody.velocity = new Vector2(maxGroundSpeed, myBody.velocity.y);
-                }
-            }
-
-            else if (Mathf.Abs(myBody.velocity.x + (Vector2.right * airSpeed).magnitude) <= maxAirSpeed || Mathf.Abs(myBody.velocity.x) > Mathf.Abs(myBody.velocity.x + (Vector2.right * airSpeed).magnitude))
-            {
-                myBody.velocity += Vector2.right * airSpeed;
-            }
+        {
+            right();
         }
-
         else
         {
             checkRight = true;
         }
 
+        // Created artificial drag
         if (checkRight && checkLeft)
         {
             if (isGrounded())
@@ -210,12 +250,12 @@ public class PlayerMovement : MonoBehaviour
                 myBody.velocity = new Vector2(groundDrag * myBody.velocity.x, myBody.velocity.y);
             }
 
-            else 
+            else
             {
                 myBody.velocity = new Vector2(myBody.velocity.x - (exalDrag) * myBody.velocity.x, myBody.velocity.y);
-            }   
+            }
         }
-        
+
         if (checkLeft && !checkRight)
         {
             if (facingRight)
@@ -223,7 +263,7 @@ public class PlayerMovement : MonoBehaviour
                 flip();
             }
         }
-        else if (!checkLeft && checkRight) 
+        else if (!checkLeft && checkRight)
         {
             if (!facingRight)
             {
@@ -231,7 +271,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    
+
+    // Handles death when colliding with game objects tagged as Enemy/Laser - Using Unity Trigger System
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
@@ -247,11 +288,5 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Contact laser");
             targetScript.setDead();
         }
-    }
-
-    private void flip()
-    {
-        myTransform.localScale = new Vector2(-1 * myTransform.localScale.x, myTransform.localScale.y);
-        facingRight = !facingRight;
     }
 }

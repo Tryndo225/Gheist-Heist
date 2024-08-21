@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class BackGround : MonoBehaviour
 {
-
+    //Variables able to be set from Unity
     [SerializeField] private Transform cameraBody;
-
     [SerializeField] private float xDistance;
     [SerializeField] private float yDistance;
     [SerializeField] private float xJumpDistance;
     [SerializeField] private float yJumpDistance;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
+    //Ensures the movemnt of BackGround graphics when using static background mode
     void Update()
     {
         if (Mathf.Abs(cameraBody.position.x - this.transform.position.x) > xDistance)

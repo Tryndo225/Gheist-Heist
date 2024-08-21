@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
+// Game engine script handles UI 
 public class GameSession : MonoBehaviour
 {
     private bool alive;
@@ -17,7 +17,7 @@ public class GameSession : MonoBehaviour
     private GamePause pauseScript;
     private LevelEscaped escapedScript;
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update - Locates necessary game objects
     void Start()
     {
         escapedScript = FindObjectOfType<LevelEscaped>();
@@ -25,31 +25,37 @@ public class GameSession : MonoBehaviour
         pauseScript = FindObjectOfType<GamePause>();
         gameOverScript = FindObjectOfType<GameOver>();
 
+        // Disables game objects after finding them
         pauseScript.gameObject.SetActive(false);
         gameOverScript.gameObject.SetActive(false);
         escapedScript.gameObject.SetActive(false);
 
+        // Sets starting variables to default
         timeAlive = TimeSpan.FromSeconds(0);
         alive = true;
-
         escaped = false;
         collectablesPicked = 0;
     }
 
+    // Tags player as dead
     public void setDead(bool state = false)
     {
         alive = state;
     }
 
+    // Counts collected item for UI purposes
     public void setPickUp()
     {
         collectablesPicked++;
     }
 
+    // Calls pause script to open pause menu
     private void pause()
     {
         pauseScript.Setup();
     }
+
+    // Calls game over script to oper game over menu
     private void gameOver()
     {
         overlayUiScript.toggle();
@@ -57,6 +63,7 @@ public class GameSession : MonoBehaviour
         gameOverScript.Setup(timeAlive);
     }
 
+    // Hadles player escaping sector
     public void justEscaped()
     {
         Debug.Log("escaped");
@@ -67,7 +74,7 @@ public class GameSession : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    // Update is called once per frame - Sets alive time and checks if player died
     void Update()
     {
 
