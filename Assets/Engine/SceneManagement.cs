@@ -1,3 +1,4 @@
+using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class SceneManagement : MonoBehaviour
     private void changeScene(string scene)
     {
         SoundFXManager.soundFXManagerInstance.playSoundFXClip(soundEffect, this.transform);
+        MemoryScript.memoryScriptInstance.progressLost();
         SceneManager.LoadScene(scene);
         Time.timeScale = 1;
     }

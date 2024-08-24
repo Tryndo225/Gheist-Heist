@@ -60,6 +60,8 @@ public class GameSession : MonoBehaviour
     {
         overlayUiScript.toggle();
         alive = true;
+        MemoryScript.memoryScriptInstance.addTime(timeAlive);
+        MemoryScript.memoryScriptInstance.addDeath();
         gameOverScript.Setup(timeAlive);
     }
 
@@ -70,6 +72,7 @@ public class GameSession : MonoBehaviour
         escaped = true;
         MemoryScript.memoryScriptInstance.progressSaved(SceneManager.GetActiveScene().name);
         overlayUiScript.toggle();
+        MemoryScript.memoryScriptInstance.addTime(timeAlive);
         escapedScript.Setup(timeAlive, collectablesPicked);
 
     }

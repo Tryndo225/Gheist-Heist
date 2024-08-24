@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script handling the booster block behavior
 public class Booster : MonoBehaviour
 {
+    // Variables for setting booster strenght
     [SerializeField] private float boostStrenghtHorizontal;
     [SerializeField] private float boostStrenghtVertical;
+
+    // Player reference
     [SerializeField] private Rigidbody2D playerBody;
 
+    // Audio clip file
     [SerializeField] private AudioClip soundEffect;
 
+    // Runns when establishing collision with the player speeding the player up by a factor 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

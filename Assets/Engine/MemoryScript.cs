@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -18,7 +19,14 @@ public class MemoryScript : MonoBehaviour
     // Main data dictionary
     private Dictionary<string, List<Vector2>> collectiblesCollected = new Dictionary<string, List<Vector2>>();
 
+    // Number of collected shards
     private int allShards = 0;
+
+    // Remembers total time spend escaping
+    private TimeSpan totalTimeRunning;
+
+    // Remembers number of deaths
+    private int deathCounter;
 
     // Runs upon script initialization
     private void Awake()
@@ -44,7 +52,32 @@ public class MemoryScript : MonoBehaviour
     // Temporary list to hold temporary data
     private List<Vector2> temporaryList = new List<Vector2>();
 
+    // Remembers last scene script ran from
     private string lastScene;
+
+    // Adds another death to the tally
+    public void addDeath()
+    {
+        deathCounter++;
+    }
+
+    // Returns the number of deaths 
+    public int numberOfDeaths()
+    {
+        return deathCounter;
+    }
+
+    // Adds time to total time
+    public void addTime(TimeSpan time)
+    {
+        totalTimeRunning += time;
+    }
+
+    // Returns total running time
+    public TimeSpan tellTime()
+    {
+        return totalTimeRunning;
+    }
 
     // Taggs colletible as collected 
     public void setCollected(Vector2 id)
