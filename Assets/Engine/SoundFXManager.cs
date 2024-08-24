@@ -107,7 +107,7 @@ public class SoundFXManager : MonoBehaviour
             lastScene = SceneManager.GetActiveScene().name;
 
             // check for lobby music
-            if (lastScene == "Main Menu" || lastScene == "Level Select" || lastScene == "Table")
+            if (lastScene == "Main Menu" || lastScene == "Level Select" || lastScene == "Table" || lastScene == "Victory Screen")
             {
                 if (musicSource.clip != mainMenuClip)
                 {

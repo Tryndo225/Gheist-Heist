@@ -74,8 +74,14 @@ public class GameSession : MonoBehaviour
         overlayUiScript.toggle();
         MemoryScript.memoryScriptInstance.addTime(timeAlive);
         escapedScript.Setup(timeAlive, collectablesPicked);
-
     }
+
+    public void winCollected()
+    {
+        Debug.Log("Won");
+        MemoryScript.memoryScriptInstance.addTime(timeAlive);
+    }
+
 
     // Update is called once per frame - Sets alive time and checks if player died
     void Update()

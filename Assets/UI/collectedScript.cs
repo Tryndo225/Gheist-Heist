@@ -29,12 +29,12 @@ public class collectedScript : MonoBehaviour
     }
 
     // Handles win button - temporary
-    public void win()
+    public void equip()
     {
         if (MemoryScript.memoryScriptInstance.howMuch() == 12)
         {
-            text.text = "You Win";
-            Application.Quit();
+            text.text = "Equiped";
+            MemoryScript.memoryScriptInstance.justEquiped();
         }
     }
 

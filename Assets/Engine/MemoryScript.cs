@@ -11,7 +11,6 @@ using UnityEngine.SceneManagement;
  * - Implemented using sigleton object
  * - 
 */
-
 public class MemoryScript : MonoBehaviour
 {
     public static MemoryScript memoryScriptInstance;
@@ -27,6 +26,12 @@ public class MemoryScript : MonoBehaviour
 
     // Remembers number of deaths
     private int deathCounter;
+
+    // Remembers the state of glasses
+    private bool equiped = false;
+
+    // Remembers if story was alredy read
+    private bool launchCheck = false;
 
     // Runs upon script initialization
     private void Awake()
@@ -55,6 +60,18 @@ public class MemoryScript : MonoBehaviour
     // Remembers last scene script ran from
     private string lastScene;
 
+    // Sets story to read
+    public void launch()
+    {
+        launchCheck = true;
+    }
+
+    // Returns whether the story was dispalyed
+    public bool launched()
+    {
+        return launchCheck;
+    }
+
     // Adds another death to the tally
     public void addDeath()
     {
@@ -66,6 +83,18 @@ public class MemoryScript : MonoBehaviour
     {
         return deathCounter;
     }
+
+    // Equips glasses
+    public void justEquiped()
+    {
+        equiped = true;
+    }
+
+    // Returns the state of glasses
+    public bool isEquiped()
+    {
+        return equiped;
+    }    
 
     // Adds time to total time
     public void addTime(TimeSpan time)
