@@ -8,16 +8,27 @@
 # Table of contents
 
 - [Usage](#usage)
+- [Controls](#controls)
 - [Installation](#installation)
 - [Recommended specs](#recommended-specs)
 - [Updating](#updating)
 - [Uninstallation](#uninstallation)
-- [Contributing](#contributing)
+- [Credits](#credits)
 - [License](#license)
 
 # Usage
 
 - There is no clear use other than relaxation and fun.
+
+[(Back to top)](#table-of-contents)
+
+# Controls
+
+- Menu Navigation: ( `Mouse 🖱️` )
+- Jump ( `↑` / `W` )
+- Run right ( `→` / `D` )
+- Run left ( `←` / `A` )
+- Fast fall ( `↓` / `S` )
 
 [(Back to top)](#table-of-contents)
 
@@ -45,7 +56,7 @@
 
 [(Back to top)](#table-of-contents)
 
-# Credist
+# Credits
 
 - Unity project developer: `Timotej Kotlín`
 - Chief of Design / Project Manager: `Nikolas Ján Hamarik`
