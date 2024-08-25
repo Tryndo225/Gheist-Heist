@@ -171,9 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f7c641631652b4cbc62bac5a71d61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myPointer: {fileID: 5158912424496517610, guid: 929c129a3bbc1764d96213097bbcdbfd, type: 3}
   playerBody: {fileID: 0}
   timeAfter: 1.5
-  timeDiff: 0
   speed: 9
   threshhold: 1.5
   midTime: 0.05

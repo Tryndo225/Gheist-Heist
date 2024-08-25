@@ -31,9 +31,4 @@ public class StatPageScript : MonoBehaviour
             setup();
         }
     }
-
-    public void end()
-    {
-        Application.Quit();
-    }
 }

@@ -12,6 +12,11 @@ using static UnityEngine.GraphicsBuffer;
 */
 public class Enemy : MonoBehaviour
 {
+    // Pointer Reference Variable
+    [SerializeField] private GameObject myPointer;
+
+    //
+
     // Player body variable
     [SerializeField] private Transform playerBody;
 
@@ -35,7 +40,6 @@ public class Enemy : MonoBehaviour
     // Game object state check
     private bool started = false;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +56,7 @@ public class Enemy : MonoBehaviour
         this.transform.position = positionPoint;
         positions.RemoveAt(0);
         timer.RemoveAt(0);
+        generatePointer();
     }
 
     // Finds viable position for ghost to move towards - skips sectors with minimal movement (optimilizes ghost movement ensuring game difficulty)
@@ -116,5 +121,11 @@ public class Enemy : MonoBehaviour
         {
             this.transform.position = Vector3.MoveTowards(this.transform.position, positionPoint, step);
         }
+    }
+
+    private void generatePointer()
+    {
+        GameObject enemyPointer = Instantiate(myPointer, this.transform);
+        enemyPointer.GetComponent<PointerScript>().setup(this.gameObject);
     }
 }

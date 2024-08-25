@@ -14,12 +14,12 @@ public class MainMenuScript : MonoBehaviour
         if (MemoryScript.memoryScriptInstance.launched())
         {
             FindObjectOfType<SceneManagement>().goToLevelSelelect();
-            MemoryScript.memoryScriptInstance.launch();
         }
 
         else
         {
             story.SetActive(true);
+            MemoryScript.memoryScriptInstance.launch();
         }
     }
 }

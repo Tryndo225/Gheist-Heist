@@ -19,7 +19,8 @@ public class MemoryScript : MonoBehaviour
     private Dictionary<string, List<Vector2>> collectiblesCollected = new Dictionary<string, List<Vector2>>();
 
     // Number of collected shards
-    private int allShards = 0;
+    private Dictionary<string, int> collectiblesAmount = new Dictionary<string, int>();
+    private int allShards;
 
     // Remembers total time spend escaping
     private TimeSpan totalTimeRunning;
@@ -52,6 +53,11 @@ public class MemoryScript : MonoBehaviour
         collectiblesCollected.Add("Sector B", new List<Vector2>());
         collectiblesCollected.Add("Sector C", new List<Vector2>());
         collectiblesCollected.Add("Sector D", new List<Vector2>());
+
+        collectiblesAmount.Add("Sector A", 0);
+        collectiblesAmount.Add("Sector B", 0);
+        collectiblesAmount.Add("Sector C", 0);
+        collectiblesAmount.Add("Sector D", 0);
     }
 
     // Temporary list to hold temporary data
@@ -120,6 +126,11 @@ public class MemoryScript : MonoBehaviour
         return allShards;
     }
 
+    public int collectedOnMap(string map)
+    {
+        return collectiblesAmount[map];
+    }
+
     // Checks for item in list
     public bool isInList(string map, Vector2 id)
     {
@@ -138,14 +149,14 @@ public class MemoryScript : MonoBehaviour
         foreach (Vector2 id in temporaryList)
         {
             if (!isInList(map, id))
-            {
-                allShards++;
+            { 
                 collectiblesCollected[map].Add(id);
+                collectiblesAmount[map]++;
+                allShards++;
             }
         }
         temporaryList = new List<Vector2>();
     }
-
     public void FixedUpdate()
     {
         if (lastScene != SceneManager.GetActiveScene().name)
