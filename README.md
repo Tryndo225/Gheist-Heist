@@ -1,9 +1,9 @@
 # Gheist Heist
-[![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/not-a-bug-a-feature.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://dotnet.microsoft.com/en-us/languages/csharp)
+[![forthebadge](https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://randommadeuplinkthathopefulywontwork.com)
+[![forthebadge](https://forthebadge.com/images/badges/not-a-bug-a-feature.svg)](https://devhumor.com/content/uploads/images/June2018/root-cause.png)
+[![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://images.shopcdn.co.uk/73/00/73009e54030c99f47788f0cd42549e32/2048x2048/webp/resize?t=1719572167)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://media.tenor.com/AkNak8NFhbMAAAAj/beating-heart.gif)
 <br>
 > Simple fast-paced platformer that tests on-the-spot decision-making, optimal path-finding, and precise maneuvering
 # Table of contents
