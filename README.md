@@ -9,6 +9,7 @@
 # Table of contents
 
 - [Usage](#usage)
+- [Objective](#objective)
 - [Controls](#controls)
 - [Installation](#installation)
 - [Recommended specs](#recommended-specs)
@@ -20,6 +21,13 @@
 # Usage
 
 - There is no clear use other than relaxation and fun.
+
+[(Back to top)](#table-of-contents)
+
+# Objective
+
+- As summarised in the description this game is a platformer however, we have incorporated a little twist. You are not platforming alone, just a few seconds behind you is a ghost, a monster if you will, shadowing you taking the same path you did. The minor difference is, that it ignores any unnecessary movements.
+- Your objective is to uncover the secred burried deep on the military base. You need special glasses to see the special door of the `Sector D`, however those glasses have been broken thus it forces you to search the remaining 3 Sectors for their `Shards`.
 
 [(Back to top)](#table-of-contents)
 
@@ -41,7 +49,7 @@
 
 # Recommended specs
 
-- The game's current build only runs on Windows 7 and never for other versions you would have to pull the project and make a custom build using Unity.
+- The game's current build only runs on Windows 7 and newer for other versions you would have to pull the project and make a custom build using Unity.
 
 [(Back to top)](#table-of-contents)
 
