@@ -25,6 +25,7 @@ public class SoundFXManager : MonoBehaviour
     //Music clips
     [SerializeField] AudioClip mainMenuClip;
     [SerializeField] AudioClip soundtrackClip;
+    [SerializeField] AudioClip lastLevelClip;
 
     //Necessary variables
     private AudioSource musicSource;
@@ -47,6 +48,49 @@ public class SoundFXManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    // Volume setter
+    public void set(float? music, float? soundFX)
+    {
+        if (soundFX.HasValue)
+        {
+            soundFXVolume = (Mathf.Round(soundFX.Value * 10)) / 10;
+            if (soundFXVolume > 1)
+            {
+                soundFXVolume = 1;
+            }
+            else if (soundFXVolume < 0)
+            {
+                soundFXVolume = 0;
+            }
+        }
+
+
+        if (music.HasValue)
+        {
+            musicVolume = (Mathf.Round(music.Value * 10)) / 10;
+            if (musicVolume > 1)
+            {
+                musicVolume = 1;
+            }
+            else if (musicVolume < 0)
+            {
+                musicVolume = 0;
+            }
+            musicSource.Pause();
+            musicSource.volume = musicVolume;
+            musicSource.Play();
+        }
+    }
+
+    // Volume getter
+    public List<float> get()
+    {
+        List<float> list = new List<float>();
+        list.Add(musicVolume);
+        list.Add(soundFXVolume);
+        return list;
     }
 
     //method called upon by other gameobjects to play a single sound clip
@@ -106,8 +150,8 @@ public class SoundFXManager : MonoBehaviour
             mainCamera = FindObjectOfType<VirtualCamera>().gameObject;
             lastScene = SceneManager.GetActiveScene().name;
 
-            // check for lobby music
-            if (lastScene == "Main Menu" || lastScene == "Level Select" || lastScene == "Table" || lastScene == "Victory Screen")
+            // Plays lobby music
+            if (lastScene == "Main Menu" || lastScene == "Level Select" || lastScene == "Table")
             {
                 if (musicSource.clip != mainMenuClip)
                 {
@@ -116,10 +160,23 @@ public class SoundFXManager : MonoBehaviour
                     musicSource.Play();
                 }
             }
-            else if (musicSource.clip != soundtrackClip)
+
+            // Plays music for other levels
+            else if (lastScene != "Victory Screen")
+            {
+                if (musicSource.clip != soundtrackClip)
+                {
+                    musicSource.Stop();
+                    musicSource.clip = soundtrackClip;
+                    musicSource.Play();
+                }
+            }
+
+            // Plays music for last level
+            else if (musicSource.clip != lastLevelClip)
             {
                 musicSource.Stop();
-                musicSource.clip = soundtrackClip;
+                musicSource.clip = lastLevelClip;
                 musicSource.Play();
             }
 

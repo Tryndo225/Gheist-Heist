@@ -50,6 +50,7 @@ MonoBehaviour:
   soundFXObject: {fileID: 6578674755677210150, guid: 44eeb46ebea2b644d8d37b8ff85ecb09, type: 3}
   mainMenuClip: {fileID: 8300000, guid: 105f94fc89e0ad9468e103f404f4340d, type: 3}
   soundtrackClip: {fileID: 8300000, guid: 05ea111ca328ec24d8870da2c62d7255, type: 3}
+  lastLevelClip: {fileID: 8300000, guid: d0ae4883ca65e6b4cad7890ae399e57e, type: 3}
 --- !u!82 &3840290168522771625
 AudioSource:
   m_ObjectHideFlags: 0

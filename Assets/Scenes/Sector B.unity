@@ -6356,7 +6356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 430503375782664804, guid: ab17ec90ea2d29c4fa685e01c34d5a8b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 430503375782664804, guid: ab17ec90ea2d29c4fa685e01c34d5a8b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12815,6 +12815,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 6109953090866740988, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
+      propertyPath: m_fontSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109953090866740988, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 7949181808339142431, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
       propertyPath: m_Camera
       value: 

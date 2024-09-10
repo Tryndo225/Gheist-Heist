@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a15f4fdcecdc9145a1c605733da9b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boostStrenghtHorizontal: 5
-  boostStrenghtVertical: 5
+  boostStrenghtHorizontal: 2
+  boostStrenghtVertical: 2
   playerBody: {fileID: 0}
   soundEffect: {fileID: 8300000, guid: 6f0d2338ca60f004ca13a43cc7be40bf, type: 3}
 --- !u!1 &6495470541072792002

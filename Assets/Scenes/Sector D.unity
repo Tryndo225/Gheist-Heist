@@ -5647,6 +5647,14 @@ PrefabInstance:
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 1352488276}
+    - target: {fileID: 6079851261267579808, guid: 01e140518c50baa4ab226907f4a21aae, type: 3}
+      propertyPath: boostStrenghtVertical
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6079851261267579808, guid: 01e140518c50baa4ab226907f4a21aae, type: 3}
+      propertyPath: boostStrenghtHorizontal
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6344,6 +6352,14 @@ PrefabInstance:
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 1352488276}
+    - target: {fileID: 6079851261267579808, guid: 01e140518c50baa4ab226907f4a21aae, type: 3}
+      propertyPath: boostStrenghtVertical
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6079851261267579808, guid: 01e140518c50baa4ab226907f4a21aae, type: 3}
+      propertyPath: boostStrenghtHorizontal
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12674,6 +12690,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1070714794}
+    - target: {fileID: 6109953090866740988, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
+      propertyPath: m_fontSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109953090866740988, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 7949181808339142431, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
       propertyPath: m_Camera
       value: 

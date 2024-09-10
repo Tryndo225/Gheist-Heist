@@ -273,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6374763634852953999, guid: 2ab39a24bf12dbf48acdac8512a87182, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6374763634852953999, guid: 2ab39a24bf12dbf48acdac8512a87182, type: 3}
       propertyPath: m_PlaneDistance
@@ -517,11 +517,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b6c901af5a7643d4b933d251da93e30c, type: 3}
     - target: {fileID: 3781335362896152653, guid: 649e16116c6f26e459e1ef6dc07edce7, type: 3}
       propertyPath: m_fontSize
-      value: 500
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3781335362896152653, guid: 649e16116c6f26e459e1ef6dc07edce7, type: 3}
       propertyPath: m_fontSizeBase
-      value: 500
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4740774060146354047, guid: 649e16116c6f26e459e1ef6dc07edce7, type: 3}
       propertyPath: m_UiScaleMode

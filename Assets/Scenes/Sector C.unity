@@ -5219,7 +5219,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 430503375782664804, guid: ab17ec90ea2d29c4fa685e01c34d5a8b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -7.000001
       objectReference: {fileID: 0}
     - target: {fileID: 430503375782664804, guid: ab17ec90ea2d29c4fa685e01c34d5a8b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9380,6 +9380,14 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4298959789911387827, guid: 80c19b164ad8f634eb88da10c6ed84a3, type: 3}
+      propertyPath: up
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298959789911387827, guid: 80c19b164ad8f634eb88da10c6ed84a3, type: 3}
+      propertyPath: left
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298959789911387827, guid: 80c19b164ad8f634eb88da10c6ed84a3, type: 3}
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 904407167236878100}
@@ -11231,14 +11239,18 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 6109953090866740988, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
+      propertyPath: m_fontSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109953090866740988, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 7949181808339142431, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 7949181808339142431, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

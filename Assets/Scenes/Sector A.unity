@@ -11693,6 +11693,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 6109953090866740988, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
+      propertyPath: m_fontSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109953090866740988, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 7949181808339142431, guid: 7eef2897c8144074db70c5651fc4cbb9, type: 3}
       propertyPath: m_Camera
       value: 

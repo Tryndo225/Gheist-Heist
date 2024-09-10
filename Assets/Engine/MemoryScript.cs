@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -20,7 +21,6 @@ public class MemoryScript : MonoBehaviour
 
     // Number of collected shards
     private Dictionary<string, int> collectiblesAmount = new Dictionary<string, int>();
-    private int allShards;
 
     // Remembers total time spend escaping
     private TimeSpan totalTimeRunning;
@@ -123,12 +123,33 @@ public class MemoryScript : MonoBehaviour
     // Informs other scrips of the amount of collected items
     public int howMuch()
     {
-        return allShards;
+        int totalAmount = 0;
+        foreach(int entry in collectiblesAmount.Values)
+        {
+            totalAmount += entry;
+        }
+        return totalAmount;
     }
 
+    // Keeps the amount of collected shards on a map
     public int collectedOnMap(string map)
     {
         return collectiblesAmount[map];
+    }
+
+    // Sets the amount of collected collectables on a map - dev option
+    public void collectedOnMapSet(string map, float number)
+    {
+        int amount = Mathf.RoundToInt(number);
+        if (amount < 0)
+        {
+            amount = 0;
+        }
+        else if (amount > 4)
+        {
+            amount = 4;
+        }
+        collectiblesAmount[map] = amount;
     }
 
     // Checks for item in list
@@ -151,8 +172,10 @@ public class MemoryScript : MonoBehaviour
             if (!isInList(map, id))
             { 
                 collectiblesCollected[map].Add(id);
-                collectiblesAmount[map]++;
-                allShards++;
+                if (collectiblesAmount[map] < 4)
+                {
+                    collectiblesAmount[map]++;
+                }
             }
         }
         temporaryList = new List<Vector2>();

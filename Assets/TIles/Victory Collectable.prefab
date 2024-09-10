@@ -133,5 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c683e5bc53be67b439a995d6db8a408b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffect: {fileID: 8300000, guid: 8b5efed789c6b614eb89fdcaa74714f7, type: 3}
+  soundEffect: {fileID: 8300000, guid: 80627948fe2974c41885f11ec089e357, type: 3}
   pointerPrefab: {fileID: 8432750689638007865, guid: 355fc4f4d200fdd4789f1f8b0cc3a5b5, type: 3}
