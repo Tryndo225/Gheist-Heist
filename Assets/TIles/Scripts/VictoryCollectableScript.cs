@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class VictoryCollectableScript : MonoBehaviour
 {
@@ -30,7 +29,7 @@ public class VictoryCollectableScript : MonoBehaviour
             SoundFXManager.soundFXManagerInstance.playSoundFXClip(soundEffect, this.transform);
             FindObjectOfType<GameSession>().winCollected();
             this.gameObject.SetActive(false);
-            SceneManager.LoadScene("Victory Screen");
+            FindAnyObjectByType<SceneManagement>().goToVictoryScreen();
         }
     }
 }

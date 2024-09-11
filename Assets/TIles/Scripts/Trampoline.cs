@@ -10,6 +10,7 @@ public class Trampoline : MonoBehaviour
     [SerializeField] private bool left;
     [SerializeField] private bool right;
 
+    private int time;
 
     // Variable for player reference
     [SerializeField] private Rigidbody2D playerBody;
@@ -23,7 +24,7 @@ public class Trampoline : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            // Variable to check whether sound should play
+            // Variable to check whether sound adn animation should play
             bool action = true;
 
             // All options in angle increments of 45°
@@ -52,11 +53,27 @@ public class Trampoline : MonoBehaviour
                 action = false;
             }
 
-            // Sound check
+            // Sound and animation check
             if (action)
             {
                 SoundFXManager.soundFXManagerInstance.playSoundFXClip(soundEffect, this.transform);
+                time = 1;
+                this.gameObject.GetComponent<Animator>().SetBool("Used", true);
             }
+        }
+    }
+
+    // Animator puposes
+    private void Update()
+    {
+        if (time != 0 && time < 2)
+        {
+            time++;
+        }
+        else if (time >= 2)
+        {
+            time = 0;
+            this.gameObject.GetComponent<Animator>().SetBool("Used", false);
         }
     }
 }

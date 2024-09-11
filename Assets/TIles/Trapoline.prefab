@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 200331821879958841}
   - component: {fileID: 8322982093437818230}
   - component: {fileID: 4298959789911387827}
+  - component: {fileID: 2265074311944651214}
+  - component: {fileID: 5657004495810581875}
   m_Layer: 0
   m_Name: Trapoline
   m_TagString: Untagged
@@ -130,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 1}
+  m_Size: {x: 3.8, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &8322982093437818230
 Rigidbody2D:
@@ -177,3 +179,36 @@ MonoBehaviour:
   right: 0
   playerBody: {fileID: 0}
   soundEffect: {fileID: 8300000, guid: 7f19391ce992912429ec2b49175b5c43, type: 3}
+--- !u!114 &2265074311944651214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56240507721008238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd618975794b4e4b8b64c2e484c1451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &5657004495810581875
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56240507721008238}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0178bf815f1c8f74ca579bf5562b18c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

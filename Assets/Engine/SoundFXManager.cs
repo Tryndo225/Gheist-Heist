@@ -98,6 +98,7 @@ public class SoundFXManager : MonoBehaviour
     {
         //spawning in game object to play sound
         AudioSource audioSource = Instantiate(soundFXObject, spawnTransform.position, Quaternion.identity);
+        DontDestroyOnLoad(audioSource);
 
         //assingning the audioFile
         audioSource.clip = audioClip;
@@ -123,6 +124,7 @@ public class SoundFXManager : MonoBehaviour
 
         //spawning in game object to play sound
         AudioSource audioSource = Instantiate(soundFXObject, spawnTransform.position, Quaternion.identity);
+        DontDestroyOnLoad(audioSource);
 
         //assingning the audioFile
         audioSource.clip = audioClip[randint];
@@ -162,7 +164,7 @@ public class SoundFXManager : MonoBehaviour
             }
 
             // Plays music for other levels
-            else if (lastScene != "Victory Screen")
+            else if (lastScene != "Victory Screen" && lastScene != "Sector D")
             {
                 if (musicSource.clip != soundtrackClip)
                 {

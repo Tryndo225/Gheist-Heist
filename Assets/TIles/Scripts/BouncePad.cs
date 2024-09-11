@@ -22,6 +22,9 @@ public class BouncePad : MonoBehaviour
     // Sound effect file
     [SerializeField] private AudioClip soundEffect;
 
+    // Animator purposes
+    private int time;
+
     // Responsible for the main fuctioning of the bouncepad where both directions are streated equally
     void monoMode()
     {
@@ -55,6 +58,9 @@ public class BouncePad : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            this.gameObject.GetComponent<Animator>().SetBool("Used", true);
+            time = 1;
+
             if (directionModeCheck)
             {
                 directionMode();
@@ -65,6 +71,21 @@ public class BouncePad : MonoBehaviour
                 monoMode();
             }
 
+        }
+    }
+
+    // For animator purposes
+    private void Update()
+    {
+        if (time < 2 && time != 0)
+        {
+            time++;
+        }
+
+        else if (time >= 2)
+        {
+            time = 0;
+            this.gameObject.GetComponent<Animator>().SetBool("Used", false);
         }
     }
 }

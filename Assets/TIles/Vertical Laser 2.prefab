@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6217780963232297231}
   - component: {fileID: 9175269108627411077}
   - component: {fileID: 6592391753552633590}
+  - component: {fileID: 6134502745330179612}
+  - component: {fileID: -2309783682521129572}
   m_Layer: 0
   m_Name: Vertical Laser 2
   m_TagString: Laser
@@ -130,3 +132,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 3.8}
   m_EdgeRadius: 0
+--- !u!95 &6134502745330179612
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6146781028763424764}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69550c8bf8114554c9be50a22e55ae3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2309783682521129572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6146781028763424764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd618975794b4e4b8b64c2e484c1451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

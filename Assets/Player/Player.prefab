@@ -50,7 +50,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 4
   m_Material: {fileID: 6200000, guid: 4be28b82aba22844abe452212e2f7c8f, type: 2}
   m_IncludeLayers:
@@ -166,7 +166,7 @@ MonoBehaviour:
   exalDrag: 0.01
   groundDrag: 0.85
   distanceGround: 0.9
-  boxSizeGround: {x: 0.8, y: 0.01, z: 0}
+  boxSizeGround: {x: 0.98, y: 0.01, z: 0}
   distanceWall: 0.55
   boxSizeWall: {x: 0.01, y: 1.2, z: 0}
   boxDraw: 1

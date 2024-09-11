@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2392083097643230302}
   - component: {fileID: 5628049301224331519}
   - component: {fileID: 7155073538078390810}
+  - component: {fileID: 1316130466591204547}
+  - component: {fileID: -1657191720062304590}
   m_Layer: 3
   m_Name: 'Horizontal Laser 2 '
   m_TagString: Laser
@@ -130,3 +132,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.8, y: 0.6}
   m_EdgeRadius: 0
+--- !u!95 &1316130466591204547
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5469966503280693672}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed3c6c70d84ec1442a68c5fa096e4298, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-1657191720062304590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5469966503280693672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd618975794b4e4b8b64c2e484c1451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

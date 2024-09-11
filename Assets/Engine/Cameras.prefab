@@ -88,19 +88,23 @@ PrefabInstance:
       objectReference: {fileID: 3030399482225937592}
     - target: {fileID: 4656445960942155263, guid: 1112b5d52eebea24e9eb07e9ff7ef09c, type: 3}
       propertyPath: m_XDamping
-      value: 0.8
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4656445960942155263, guid: 1112b5d52eebea24e9eb07e9ff7ef09c, type: 3}
       propertyPath: m_YDamping
-      value: 0.8
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4656445960942155263, guid: 1112b5d52eebea24e9eb07e9ff7ef09c, type: 3}
       propertyPath: m_LookaheadTime
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4656445960942155263, guid: 1112b5d52eebea24e9eb07e9ff7ef09c, type: 3}
       propertyPath: m_LookaheadSmoothing
-      value: 0.8
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656445960942155263, guid: 1112b5d52eebea24e9eb07e9ff7ef09c, type: 3}
+      propertyPath: m_TargetMovementOnly
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7259693041227364365, guid: 1112b5d52eebea24e9eb07e9ff7ef09c, type: 3}
       propertyPath: m_Name
@@ -193,11 +197,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2871768623694126684, guid: 3fca5b1b07fe1b548b11a4eed98a3332, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0037612915
+      value: 20.498573
       objectReference: {fileID: 0}
     - target: {fileID: 2871768623694126684, guid: 3fca5b1b07fe1b548b11a4eed98a3332, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 2871768623694126684, guid: 3fca5b1b07fe1b548b11a4eed98a3332, type: 3}
       propertyPath: m_LocalPosition.z

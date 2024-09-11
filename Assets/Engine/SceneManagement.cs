@@ -53,6 +53,12 @@ public class SceneManagement : MonoBehaviour
         changeScene("Sector D");
     }
 
+    public void goToVictoryScreen()
+    {
+        changeScene("Victory Screen");
+    }
+
+
     public void goToTable()
     {
         changeScene("Table");

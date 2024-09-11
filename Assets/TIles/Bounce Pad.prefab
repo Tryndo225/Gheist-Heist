@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 6173477083938704189}
   - component: {fileID: 3576816511267540463}
   - component: {fileID: 9159523351318698615}
+  - component: {fileID: 8757496809717889125}
   - component: {fileID: 3301076594824953914}
+  - component: {fileID: 2287487432622423324}
   m_Layer: 3
   m_Name: Bounce Pad
   m_TagString: Level
@@ -145,8 +147,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceStrenght: 0
+  directionModeCheck: 0
+  bounceStrenghtRight: 0
+  bounceStrenghtLeft: 0
+  bounceDirectionRight: {x: 0, y: 0}
+  bounceDirectionLeft: {x: 0, y: 0}
   playerBody: {fileID: 0}
   soundEffect: {fileID: 8300000, guid: a562a89bbab579d439ffd9782fcc63dd, type: 3}
+--- !u!114 &8757496809717889125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571508374870943548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd618975794b4e4b8b64c2e484c1451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &3301076594824953914
 Rigidbody2D:
   serializedVersion: 4
@@ -174,3 +193,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!95 &2287487432622423324
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571508374870943548}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28fd903e7b67ee840a947039b5598963, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
