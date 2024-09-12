@@ -203,21 +203,25 @@ public class PlayerMovement : MonoBehaviour
         facingRight = !facingRight;
     }
 
-    // Update is called once per frame
-    /* 
-     * Update method is used for checking for player inputs and subsiquent implementions of those movements
-    */
-    void Update()
+    //Jump input
+    private void Update()
     {
-        // necessary checks
-        checkRight = false;
-        checkLeft = false;
-
         // Handles Jumping input
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             jump();
         }
+    }
+
+    // Update is called once per frame
+    /* 
+     * Update method is used for checking for player inputs and subsiquent implementions of those movements
+    */
+    void FixedUpdate()
+    {
+        // necessary checks
+        checkRight = false;
+        checkLeft = false;
 
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
@@ -270,12 +274,13 @@ public class PlayerMovement : MonoBehaviour
                 flip();
             }
         }
-
+        /*
         // Animator purposes
         float movementX = myBody.velocity.x;
         float movementY = myBody.velocity.y;
         this.gameObject.GetComponent<Animator>().SetFloat("MovementX", movementX);
         this.gameObject.GetComponent<Animator>().SetFloat("MovementY", movementY);
+        */
     }
 
     // Handles death when colliding with game objects tagged as Enemy/Laser - Using Unity Trigger System

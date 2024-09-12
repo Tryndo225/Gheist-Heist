@@ -1920,6 +1920,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Victory Collectable
       objectReference: {fileID: 0}
+    - target: {fileID: 2590629915352762080, guid: a7c719a8975d90246848fd52b8eedbf0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 267a857e336353240b67e801eae6f801, type: 3}
+    - target: {fileID: 2590629915352762080, guid: a7c719a8975d90246848fd52b8eedbf0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590629915352762080, guid: a7c719a8975d90246848fd52b8eedbf0, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590629915352762080, guid: a7c719a8975d90246848fd52b8eedbf0, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7856233385675088844, guid: a7c719a8975d90246848fd52b8eedbf0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -87.5
@@ -6876,7 +6892,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1834790217808378046, guid: 072edf2449e73b946b1e128ac1ed93bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0037612915
+      value: 0.006006241
       objectReference: {fileID: 0}
     - target: {fileID: 1834790217808378046, guid: 072edf2449e73b946b1e128ac1ed93bf, type: 3}
       propertyPath: m_LocalPosition.y

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2590629915352762080}
   - component: {fileID: -4566015931960219334}
   - component: {fileID: 4627171236932343407}
+  - component: {fileID: 8683351163271642747}
   m_Layer: 0
   m_Name: Victory Collectable
   m_TagString: Untagged
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.06521175, g: 0.8037735, b: 0.21929303, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 267a857e336353240b67e801eae6f801, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -135,3 +136,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEffect: {fileID: 8300000, guid: 80627948fe2974c41885f11ec089e357, type: 3}
   pointerPrefab: {fileID: 8432750689638007865, guid: 355fc4f4d200fdd4789f1f8b0cc3a5b5, type: 3}
+--- !u!95 &8683351163271642747
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2471377670870076693}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ecdea9ab3f4fe2f46b65fe0dec0c9595, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

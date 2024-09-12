@@ -16,20 +16,21 @@ public class Booster : MonoBehaviour
     [SerializeField] private AudioClip soundEffect;
 
     // Animator purposes
-    private int time;
+    //private int time;
 
     // Runns when establishing collision with the player speeding the player up by a factor 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            this.gameObject.GetComponent<Animator>().SetBool("Used", true);
-            time = 1;
+            //this.gameObject.GetComponent<Animator>().SetBool("Used", true);
+            //time = 1;
             playerBody.velocity = new Vector2(playerBody.velocity.x * boostStrenghtHorizontal,  playerBody.velocity.y * boostStrenghtVertical);
             SoundFXManager.soundFXManagerInstance.playSoundFXClip(soundEffect, this.transform);
         }
     }
 
+    /*
     // For animator purposes
     private void Update()
     {
@@ -44,4 +45,5 @@ public class Booster : MonoBehaviour
             this.gameObject.GetComponent<Animator>().SetBool("Used", false);
         }
     }
+    */
 }

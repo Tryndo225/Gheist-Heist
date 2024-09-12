@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5216493242534130831}
   - component: {fileID: 1128863055219433229}
   - component: {fileID: 2841574238074979488}
+  - component: {fileID: -4266485998394156774}
   m_Layer: 1
   m_Name: Shadow
   m_TagString: Enemy
@@ -178,3 +179,24 @@ MonoBehaviour:
   threshhold: 1.5
   midTime: 0.05
   maxTime: 3
+--- !u!95 &-4266485998394156774
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149627575616698511}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f2711ee4899f1344ae140f7aa1677df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
