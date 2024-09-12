@@ -270,6 +270,12 @@ public class PlayerMovement : MonoBehaviour
                 flip();
             }
         }
+
+        // Animator purposes
+        float movementX = myBody.velocity.x;
+        float movementY = myBody.velocity.y;
+        this.gameObject.GetComponent<Animator>().SetFloat("MovementX", movementX);
+        this.gameObject.GetComponent<Animator>().SetFloat("MovementY", movementY);
     }
 
     // Handles death when colliding with game objects tagged as Enemy/Laser - Using Unity Trigger System
