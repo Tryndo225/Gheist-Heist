@@ -115,9 +115,9 @@ Additional Considerations
  * Folders: Organize your project files into folders for better management and maintainability.
 
 - Algorithms:
-  * Enemy AI - Uses a list with timestamped locations of the player and calculates the new target location of the enemy based on this information. The algoritm optimizes the path taken neglecting small movements and ignoring insufficiently sized movements.
-  * Background Parallax - This algorithm averages the center of the frame with the player's location thus creating illusion of depth.
-  * Air Friction - Handles all player friction by multiplying the drag coefition with time in between frame calculations. This enables drag to be customizable thus ensuring personalized calibration.
+  * Enemy AI (Enemy.cs) - Uses a list with timestamped locations of the player and calculates the new target location of the enemy based on this information. The algoritm optimizes the path taken neglecting small movements and ignoring insufficiently sized movements.
+  * Background Parallax (paralaxScript.cs) - This algorithm averages the center of the frame with the player's location thus creating illusion of depth.
+  * Air Friction (PlayerMovement.cs) - Handles all player friction by multiplying the drag coefition with time in between frame calculations. This enables drag to be customizable thus ensuring personalized calibration.
  
 - Special Implementations:
    * Singleton - Sound Effect Script, Scene Manager Script, Memory Manager Script - THis ensured data transfer inbetween scenes
