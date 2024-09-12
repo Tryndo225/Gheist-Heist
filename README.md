@@ -18,6 +18,7 @@
 - [Programmer Manual](#programmer-manual)
 - [Credits](#credits)
 - [License](#license)
+- [Conclusion](#conclusion)
 
 # Usage
 
